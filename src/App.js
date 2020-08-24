@@ -1,9 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Logo from './img/sources-homepage/logo/logo-white.png';
+import Image from './Components/Image';
+import MyButton from './Components/MyButton';
+import { Button } from 'react-bootstrap';
 
 const App = () => {
+
+  const image = useSelector(state => state.image)
 
   return(
     <div className="App">
@@ -23,6 +29,13 @@ const App = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
+      <Button onClick={() => console.log(image)}/>
+
+      <MyButton marque="legende" />
+      <MyButton marque="pure" />
+
+      <Image />
     </div>
   )
 }

@@ -1,20 +1,28 @@
 const initialState = {
-    marque: "",
-    couleur: "",
-    jantes: "",
-    sellerie: [],
-    equipement: [],
-    accessoires: []
-  };
+  image: "legende",
+  marque: "legende",
+  couleur: "",
+  jantes: "",
+  sellerie: [],
+  equipement: [],
+  accessoires: []
+};
    
-  const rootReducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
 
-    if (action.type === 'setMarque') {
-        //   TODO blabla
+  if (action.type === 'setMarque') {
+    let myMarque = action.payload.marque
+    let newState = {
+      ...state,
+      image: myMarque,
+      marque: myMarque
     }
+    console.log(newState)
 
-    return state;
+    return newState
   }
-   
-  export default rootReducer;
+
+  return state;
+}
   
+export default rootReducer;
