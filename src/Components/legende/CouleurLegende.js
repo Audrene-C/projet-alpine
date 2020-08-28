@@ -1,10 +1,10 @@
 import React from 'react';
-import MyButton from './MyButton';
-import Images from '../tools/Images';
+import MyButton from '../MyButton';
+import Images from '../../tools/Images';
 
 const CouleurLegende = () => {
     return (
-      <div>
+      <div className="options">
         <div className="card" style={{ width: '10rem' }}>
             <img src={Images.marque.legende.blanc.select} className="card-img-top" alt="blanc" />
             <div className="card-body">

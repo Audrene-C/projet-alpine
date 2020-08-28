@@ -107,10 +107,38 @@ const Images = {
         standard: '/assets/configurateur/jantes/selection/jante-standard.jpg'
     },
     sellerie: {
-        brun: '/assets/configurateur/interieurs/selection/cuir-brun.jpg',
-        noir: '/assets/configurateur/interieurs/selection/cuir-noir.jpg',
-        dinamica: '/assets/configurateur/interieurs/selection/cuir-noir_dinamica.jpg',
-        perfore: '/assets/configurateur/interieurs/selection/cuir-noir_perfore.jpg'
+        brun: {
+            select: '/assets/configurateur/interieurs/selection/cuir-brun.jpg',
+            vue: [
+                '/assets/configurateur/interieurs/vues/cuir-brun-1.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-brun-2.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-brun-3.jpg'
+            ]
+        },
+        noir: {
+            select: '/assets/configurateur/interieurs/selection/cuir-noir.jpg',
+            vue: [
+                '/assets/configurateur/interieurs/vues/cuir-noir-1.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-noir-2.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-noir-3.jpg'
+            ]
+        },
+        dinamica: {
+            select: '/assets/configurateur/interieurs/selection/cuir-noir_dinamica.jpg',
+            vue: [
+                '/assets/configurateur/interieurs/vues/cuir-noir_dinamica-1.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-noir_dinamica-2.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-noir_dinamica-3.jpg'
+            ]
+        },
+        perfore: {
+            select: '/assets/configurateur/interieurs/selection/cuir-noir_perfore.jpg',
+            vue: [
+                '/assets/configurateur/interieurs/vues/cuir-noir_perfore-1.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-noir_perfore-2.jpg',
+                '/assets/configurateur/interieurs/vues/cuir-noir_perfore-3.jpg'
+            ]
+        },
     },
     equipements: {
         conduite: {

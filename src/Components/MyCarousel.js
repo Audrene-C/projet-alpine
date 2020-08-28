@@ -21,9 +21,11 @@ const MyCarousel = () => {
     }
 
     return (
-        <Carousel>
-            {createItems()}
-        </Carousel>
+        <div className="carou">
+            <Carousel>
+                {createItems()}
+            </Carousel>
+        </div>
     )
 
 }

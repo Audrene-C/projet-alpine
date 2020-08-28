@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import OngletLegende from './Components/OngletLegende';
-import OngletPure from './Components/OngletPure';
+import OngletLegende from './Components/legende/OngletLegende';
+import OngletPure from './Components/pure/OngletPure';
 import Images from './tools/Images';
 import {
   BrowserRouter as Router,

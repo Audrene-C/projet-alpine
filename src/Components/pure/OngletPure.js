@@ -1,8 +1,8 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
-import SetMarque from '../tools/SetMarque';
-import MyCarousel from './MyCarousel';
-import Preview from './Preview';
+import SetMarque from '../../tools/SetMarque';
+import MyCarousel from '../MyCarousel';
+import Recap from '../Recap';
 import {
     Switch,
     Route,
@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 import CouleurPure from './CouleurPure';
 import JantesPure from './JantesPure';
-import Sellerie from './Sellerie';
-import Accessoires from './Accessoires';
-import Equipements from './Equipements';
+import SelleriePure from './SelleriePure';
+import Accessoires from '../accessoires/Accessoires';
+import Equipements from '../equipements/Equipements';
 
 const OngletPure = () => {
     let match = useRouteMatch();
@@ -38,7 +38,7 @@ const OngletPure = () => {
             <Link to={`${match.url}/accessoires`}>Accessoires</Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to={`${match.url}/preview`}>Preview</Link>
+            <Link to={`${match.url}/recap`}>Recap</Link>
           </Nav.Item>
         </Nav>
   
@@ -54,7 +54,7 @@ const OngletPure = () => {
             <JantesPure />
           </Route>
           <Route path={`${match.path}/sellerie`}>
-            <Sellerie />
+            <SelleriePure />
           </Route>
           <Route path={`${match.path}/equipements`}>
             <Equipements />
@@ -62,11 +62,11 @@ const OngletPure = () => {
           <Route path={`${match.path}/accessoires`}>
             <Accessoires />
           </Route>
-          <Route path={`${match.path}/preview`}>
-            <Preview />
+          <Route path={`${match.path}/recap`}>
+            <Recap />
           </Route>
         </Switch>
-  
+
         <MyCarousel/>
       </div>
     );

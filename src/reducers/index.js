@@ -2,15 +2,13 @@ import Images from '../tools/Images'
 
 const initialState = {
   carousel: [Images.marque.legende.img],
-  preview: [Images.marque.legende.img],
-  show: false,
   marque: "Legende",
   couleur: "Noir",
   jantes: "Legende",
-  sellerie: "Cuir brun",
+  sellerie: "Cuir noir",
   equipements: [],
   accessoires: [],
-  prix: 0
+  prix: 58500
 };
    
 const rootReducer = (state = initialState, action) => {
@@ -25,7 +23,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         carousel: [Images.marque.legende.img],
         marque: myMarque,
-        jantes: "Jantes Légendes"
+        jantes: "Jantes Légendes",
+        prix: 58500
       }
       console.log(newState)
   
@@ -36,7 +35,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         carousel: [Images.marque.pure.img],
         marque: myMarque,
-        jantes: "Jantes Standard"
+        jantes: "Jantes Standard",
+        prix: 54700
       }
       console.log(newState)
   
@@ -224,30 +224,44 @@ const rootReducer = (state = initialState, action) => {
     }
   }
 
-  if (action.type === 'setPreview') {
-    let myPreview = action.payload.img
-    console.log('myPreview: ', myPreview)
-    if (myPreview === state.preview) {
-      return
-    } else {
+  if (action.type === 'setSellerie') {
+    let newSellerie = action.payload.sellerie
+    if (newSellerie === 'Cuir brun') {
       let newState = {
         ...state,
-        preview: myPreview
+        carousel: Images.sellerie.brun.vue,
+        sellerie: newSellerie
       }
-      console.log(newState)
-  
+      console.log(newState)  
       return newState
     }
-  }
-
-  if (action.type === 'setShow') {
-    let newShow = action.payload.val
-    let newState = {
-      ...state,
-      show: newShow
+    if (newSellerie === 'Cuir noir') {
+      let newState = {
+        ...state,
+        carousel: Images.sellerie.noir.vue,
+        sellerie: newSellerie
+      }
+      console.log(newState)  
+      return newState
     }
-    console.log(newState)  
-    return newState
+    if (newSellerie === 'Noir Dinamica') {
+      let newState = {
+        ...state,
+        carousel: Images.sellerie.dinamica.vue,
+        sellerie: newSellerie
+      }
+      console.log(newState)  
+      return newState
+    }
+    if (newSellerie === 'Noir Perfore') {
+      let newState = {
+        ...state,
+        carousel: Images.sellerie.perfore.vue,
+        sellerie: newSellerie
+      }
+      console.log(newState)  
+      return newState
+    }
   }
 
   return state;

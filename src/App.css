@@ -1,4 +1,12 @@
 .options {
-  max-height: 50px;
-  max-width: 50px;
+  position: absolute;
+  left: 0px;
+  top: 15%;
+  z-index: 9;
+}
+
+.carou {
+  position: absolute;
+  right: 0px;
+  z-index: 1;
 }

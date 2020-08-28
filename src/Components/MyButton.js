@@ -17,6 +17,11 @@ const MyButton = (props) => {
     console.log('setJantes se lance')
   }
 
+  const setSellerie = (props) => {
+    dispatch({type: 'setSellerie', payload: {sellerie: props.sellerie}})
+    console.log('setSellerie se lance')
+  }
+
   if (props.couleur !== undefined) {
 
     return(
@@ -39,7 +44,21 @@ const MyButton = (props) => {
           bg="dark"
           variant="dark"
           onClick={() => setJantes(props)}>
-            {props.jantes}
+            Selectionner
+        </Button>
+      </div>
+    )
+  }
+
+  if (props.sellerie !== undefined) {
+
+    return(
+      <div className="MyButton">
+        <Button 
+          bg="dark"
+          variant="dark"
+          onClick={() => setSellerie(props)}>
+            Selectionner
         </Button>
       </div>
     )
