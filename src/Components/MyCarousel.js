@@ -1,48 +1,28 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Blanc from './assets/configurateur/couleurs/selection/blanc.jpg';
-import Bleu from './assets/configurateur/couleurs/selection/bleu.jpg';
-import Noir from './assets/configurateur/couleurs/selection/noir.jpg';
+import { useSelector } from 'react-redux';
 
 const MyCarousel = () => {
 
+    const carousel = useSelector(state => state.carousel)
+    const createItems = () => {
+        console.log('carousel: ', carousel)
+        return carousel.map((item, i) => {
+            return(
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100"
+                    src={item}
+                    alt={`slide ${i}`}
+                    />
+                </Carousel.Item>
+            )            
+        })        
+    }
+
     return (
         <Carousel>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={Blanc}
-                alt="First slide"
-                />
-                <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={Bleu}
-                alt="Second slide"
-                />
-
-                <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={Noir}
-                alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
+            {createItems()}
         </Carousel>
     )
 
